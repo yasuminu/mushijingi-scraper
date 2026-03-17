@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蟲神器 相場チェッカー</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e0a; --surface: #111711; --card: #161e16;
+    --border: #1e2e1e; --accent: #4cff6e; --accent2: #ffe44c;
+    --text: #e8f5e8; --muted: #5a7a5a; --up: #4cff6e; --down: #ff4c6e;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Zen Kaku Gothic New',sans-serif; min-height:100vh; }
+  header { border-bottom:1px solid var(--border); padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:64px; position:sticky; top:0; background:rgba(10,14,10,0.97); backdrop-filter:blur(12px); z-index:100; }
+  .logo-text { font-size:1.2rem; font-weight:900; } .logo-text span { color:var(--accent); }
+  .live-badge { display:flex; align-items:center; gap:6px; font-family:'Share Tech Mono',monospace; font-size:0.7rem; color:var(--accent); border:1px solid var(--accent); padding:4px 10px; border-radius:2px; }
+  .live-dot { width:6px; height:6px; background:var(--accent); border-radius:50%; animation:pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  main { max-width:1100px; margin:0 auto; padding:2rem; }
+  .hero { text-align:center; padding:2rem 0; }
+  .hero h1 { font-size:clamp(1.8rem,4vw,3rem); font-weight:900; }
+  .hero h1 em { font-style:normal; color:var(--accent); }
+  .hero p { color:var(--muted); font-size:0.85rem; margin-top:0.5rem; }
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:4px; margin:1.5rem 0; overflow:hidden; }
+  .stat { background:var(--surface); padding:1rem; text-align:center; }
+  .stat-label { font-size:0.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px; }
+  .stat-val { font-family:'Share Tech Mono',monospace; font-size:1.2rem; font-weight:bold; }
+  .green{color:var(--accent)} .yellow{color:var(--accent2)} .orange{color:#ff6b35}
+  .filters { display:flex; gap:6px; margin-bottom:1.5rem; flex-wrap:wrap; }
+  .filter-btn { background:var(--surface); border:1px solid var(--border); color:var(--muted); padding:6px 14px; border-radius:2px; font-family:'Zen Kaku Gothic New',sans-serif; font-size:0.8rem; cursor:pointer; transition:all 0.2s; }
+  .filter-btn.active,.filter-btn:hover { border-color:var(--accent); color:var(--accent); background:rgba(76,255,110,0.05); }
+  .cards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:4px; overflow:hidden; }
+  .card-item { background:var(--card); padding:1.4rem; transition:background 0.2s; border-left:3px solid transparent; }
+  .card-item:hover { background:#1c261c; border-left-color:var(--accent); }
+  .card-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.8rem; }
+  .card-name { font-weight:700; font-size:0.95rem; flex:1; }
+  .rarity-badge { font-size:0.65rem; padding:2px 7px; border-radius:2px; font-family:'Share Tech Mono',monospace; white-space:nowrap; margin-left:8px; }
+  .r-LR{background:rgba(255,100,255,0.15);color:#ff64ff;border:1px solid rgba(255,100,255,0.3)}
+  .r-SR{background:rgba(255,215,0,0.15);color:#ffd700;border:1px solid rgba(255,215,0,0.3)}
+  .r-R{background:rgba(76,255,110,0.1);color:var(--accent);border:1px solid rgba(76,255,110,0.3)}
+  .r-UC{background:rgba(100,160,255,0.1);color:#64a0ff;border:1px solid rgba(100,160,255,0.3)}
+  .r-C{background:rgba(150,150,150,0.1);color:#aaa;border:1px solid rgba(150,150,150,0.3)}
+  .price-main { font-family:'Share Tech Mono',monospace; font-size:1.5rem; font-weight:bold; color:var(--accent2); margin-bottom:0.5rem; }
+  .price-range { display:grid; grid-template-columns:1fr 1fr; gap:4px; padding-top:0.7rem; border-top:1px solid var(--border); margin-bottom:0.7rem; }
+  .pr-item { text-align:center; }
+  .pr-label { font-size:0.62rem; color:var(--muted); text-transform:uppercase; margin-bottom:2px; }
+  .pr-val { font-family:'Share Tech Mono',monospace; font-size:0.82rem; }
+  .sources { display:flex; gap:4px; margin-top:0.7rem; }
+  .src { font-size:0.62rem; padding:2px 6px; border-radius:2px; font-family:'Share Tech Mono',monospace; }
+  .src-shop { background:rgba(76,255,110,0.1); color:var(--accent); border:1px solid rgba(76,255,110,0.3); }
+  .empty { padding:3rem; text-align:center; color:var(--muted); grid-column:1/-1; }
+  .updated { font-family:'Share Tech Mono',monospace; font-size:0.72rem; color:var(--muted); text-align:right; margin-top:1rem; }
+  .loading { text-align:center; padding:3rem; color:var(--muted); grid-column:1/-1; }
+  @media(max-width:600px){ .stats{grid-template-columns:repeat(2,1fr)} main{padding:1rem} }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo-text">🪲 蟲神器<span>相場</span></div>
+  <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+</header>
+<main>
+  <div class="hero">
+    <h1>蟲神器の<em>リアルタイム</em>相場</h1>
+    <p>カードラッシュ・遊々亭の価格を毎日自動集計</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-label">カード数</div><div class="stat-val green" id="statCount">-</div></div>
+    <div class="stat"><div class="stat-label">最高値</div><div class="stat-val orange" id="statMax">-</div></div>
+    <div class="stat"><div class="stat-label">最安値</div><div class="stat-val green" id="statMin">-</div></div>
+    <div class="stat"><div class="stat-label">更新日</div><div class="stat-val yellow" id="statTime" style="font-size:0.75rem">-</div></div>
+  </div>
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterBy('ALL',this)">すべて</button>
+    <button class="filter-btn" onclick="filterBy('LR',this)">LR</button>
+    <button class="filter-btn" onclick="filterBy('SR',this)">SR</button>
+    <button class="filter-btn" onclick="filterBy('R',this)">R</button>
+    <button class="filter-btn" onclick="filterBy('UC',this)">UC</button>
+    <button class="filter-btn" onclick="filterBy('C',this)">C</button>
+    <button class="filter-btn" onclick="sortBy('high',this)">高値順</button>
+    <button class="filter-btn" onclick="sortBy('low',this)">安値順</button>
+  </div>
+  <div class="cards-grid" id="cardsGrid"><div class="loading">データを読み込み中...</div></div>
+  <div class="updated" id="updated"></div>
+</main>
+<script>
+const GITHUB_USER = 'yasuminu';
+const GITHUB_REPO = 'mushijingi-scraper';
+const JSON_URL = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/prices.json`;
+
+let allCards = [];
+let currentFilter = 'ALL';
+
+async function loadData() {
+  try {
+    const res = await fetch(JSON_URL + '?t=' + Date.now());
+    const data = await res.json();
+    allCards = data.cards || [];
+    updateStats(allCards);
+    renderCards(allCards);
+    document.getElementById('updated').textContent =
+      '最終更新: ' + new Date(data.updatedAt).toLocaleString('ja-JP');
+  } catch(e) {
+    document.getElementById('cardsGrid').innerHTML =
+      '<div class="empty">データの読み込みに失敗しました。しばらく待ってから更新してください。</div>';
+  }
+}
+
+function updateStats(cards) {
+  if (!cards.length) return;
+  const prices = cards.map(c => c.currentPrice || c.price || 0).filter(p => p > 0);
+  document.getElementById('statCount').textContent = cards.length + '件';
+  document.getElementById('statMax').textContent = '¥' + Math.max(...prices).toLocaleString();
+  document.getElementById('statMin').textContent = '¥' + Math.min(...prices).toLocaleString();
+  document.getElementById('statTime').textContent = new Date().toLocaleDateString('ja-JP');
+}
+
+function renderCards(cards) {
+  const grid = document.getElementById('cardsGrid');
+  if (!cards.length) {
+    grid.innerHTML = '<div class="empty">カードが見つかりませんでした</div>';
+    return;
+  }
+  grid.innerHTML = cards.map(card => {
+    const price = card.currentPrice || card.price || 0;
+    const min = card.minPrice || price;
+    const max = card.maxPrice || price;
+    const rarity = card.rarity || 'C';
+    const sources = card.sources || [card.source || 'ショップ'];
+    return `
+      <div class="card-item">
+        <div class="card-top">
+          <div class="card-name">${esc(card.name)}</div>
+          <div class="rarity-badge r-${rarity}">${rarity}</div>
+        </div>
+        <div class="price-main">¥${price.toLocaleString()}</div>
+        <div class="price-range">
+          <div class="pr-item"><div class="pr-label">最安値</div><div class="pr-val">¥${min.toLocaleString()}</div></div>
+          <div class="pr-item"><div class="pr-label">最高値</div><div class="pr-val">¥${max.toLocaleString()}</div></div>
+        </div>
+        <div class="sources">${sources.map(s => `<span class="src src-shop">${esc(s)}</span>`).join('')}</div>
+      </div>`;
+  }).join('');
+}
+
+function filterBy(rarity, btn) {
+  currentFilter = rarity;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const filtered = rarity === 'ALL' ? allCards : allCards.filter(c => c.rarity === rarity);
+  renderCards(filtered);
+}
+
+function sortBy(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const sorted = [...allCards].sort((a, b) => {
+    const pa = a.currentPrice || a.price || 0;
+    const pb = b.currentPrice || b.price || 0;
+    return type === 'high' ? pb - pa : pa - pb;
+  });
+  renderCards(sorted);
+}
+
+function esc(str) {
+  return String(str||'').replace(/[&<>"']/g, c =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+loadData();
+</script>
+</body>
+</html>
