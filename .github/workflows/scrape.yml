@@ -5,6 +5,9 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -33,4 +36,3 @@ jobs:
         git add prices.json
         git diff --staged --quiet || git commit -m "価格データを更新 $(date '+%Y-%m-%d')"
         git push
-        
