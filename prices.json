@@ -1,5 +1,853 @@
 {
-  "cards": [],
-  "updatedAt": "2026-03-17T04:31:56.399064",
-  "totalCards": 0
+  "cards": [
+    {
+      "name": "蟲神器 6弾 LR ゴクラクトリバネアゲハ 1枚",
+      "rarity": "LR",
+      "currentPrice": 60010,
+      "minPrice": 60010,
+      "maxPrice": 60010,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002235"
+    },
+    {
+      "name": "蟲神器 LR オオミズアオ 1枚",
+      "rarity": "LR",
+      "currentPrice": 34616,
+      "minPrice": 34616,
+      "maxPrice": 34616,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002245"
+    },
+    {
+      "name": "蟲神器 兜虫の甲冑 2枚 2枚",
+      "rarity": "C",
+      "currentPrice": 50117,
+      "minPrice": 50117,
+      "maxPrice": 50117,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002248"
+    },
+    {
+      "name": "蟲神器 2弾 SR ロードハウナナフシ 2枚セット 2枚",
+      "rarity": "SR",
+      "currentPrice": 10503,
+      "minPrice": 10503,
+      "maxPrice": 10503,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002251"
+    },
+    {
+      "name": "蟲神器 SR ジャイアントウェタ 1枚",
+      "rarity": "SR",
+      "currentPrice": 7291,
+      "minPrice": 7291,
+      "maxPrice": 7291,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002257"
+    },
+    {
+      "name": "蟲神器 2弾 LR リュウジンオオムカデ 新品未使用品 1枚",
+      "rarity": "LR",
+      "currentPrice": 35538,
+      "minPrice": 35538,
+      "maxPrice": 35538,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002260"
+    },
+    {
+      "name": "蟲神器 LR 瀬戸際の虫時雨 新品未使用品 1枚",
+      "rarity": "LR",
+      "currentPrice": 30658,
+      "minPrice": 30658,
+      "maxPrice": 30658,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002262"
+    },
+    {
+      "name": "蟲神器第3弾 水生昆虫 R以下まとめ売りセット 8枚",
+      "rarity": "C",
+      "currentPrice": 300,
+      "minPrice": 300,
+      "maxPrice": 300,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002265"
+    },
+    {
+      "name": "蟲神器 赤コスト5 SR 1.2.3弾 まとめ売り 12枚",
+      "rarity": "SR",
+      "currentPrice": 400,
+      "minPrice": 400,
+      "maxPrice": 400,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002267"
+    },
+    {
+      "name": "蟲神器 青コスト5 SR 1.2.3弾 まとめ売り 12枚",
+      "rarity": "SR",
+      "currentPrice": 400,
+      "minPrice": 400,
+      "maxPrice": 400,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002270"
+    },
+    {
+      "name": "蟲神器 緑コスト5 SR 1.2.3弾 まとめ売 13枚",
+      "rarity": "SR",
+      "currentPrice": 400,
+      "minPrice": 400,
+      "maxPrice": 400,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002273"
+    },
+    {
+      "name": "蟲神器 低コスト各色 SR 1.2.3弾 まとめ売り 18枚",
+      "rarity": "SR",
+      "currentPrice": 450,
+      "minPrice": 450,
+      "maxPrice": 450,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002275"
+    },
+    {
+      "name": "蟲神器 低コスト SR 1.2.3弾 まとめ売り 8枚",
+      "rarity": "SR",
+      "currentPrice": 300,
+      "minPrice": 300,
+      "maxPrice": 300,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002278"
+    },
+    {
+      "name": "虫神器 パラワンオオヒラタクワガタ 1枚",
+      "rarity": "C",
+      "currentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002280"
+    },
+    {
+      "name": "蟲神器 タイタンオオウスバカミキリ LR 1枚",
+      "rarity": "LR",
+      "currentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002283"
+    },
+    {
+      "name": "蟲神器 オオミズアオ LR 1枚",
+      "rarity": "LR",
+      "currentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002288"
+    },
+    {
+      "name": "蟲神器 ネプチューンオオカブト LR 2枚 2枚",
+      "rarity": "LR",
+      "currentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002291"
+    },
+    {
+      "name": "蟲神器 1枚",
+      "rarity": "C",
+      "currentPrice": 1550,
+      "minPrice": 900,
+      "maxPrice": 2200,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002294"
+    },
+    {
+      "name": "蟲神器　オニヤンマ　4/130　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002297"
+    },
+    {
+      "name": "蟲神器　軍隊蟻の蹂躙　55/60　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002300"
+    },
+    {
+      "name": "蟲神器　エメラルドゴキブリバチ　7/55　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002302"
+    },
+    {
+      "name": "蟲神器　ハナカマキリ　2/55　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002305"
+    },
+    {
+      "name": "蟲神器　メキシカンレッドニー　3/130　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002307"
+    },
+    {
+      "name": "蟲神器　オオジョウログモ　3/60　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002310"
+    },
+    {
+      "name": "蟲神器　ダイオウサソリ　3/55　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002312"
+    },
+    {
+      "name": "蟲神器　キョジンツユムシ　32/60　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002315"
+    },
+    {
+      "name": "蟲神器　オオコノハムシ　72/130　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002318"
+    },
+    {
+      "name": "蟲神器　ジャイアントウェタ　69/130　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002320"
+    },
+    {
+      "name": "蟲神器　シロスジカミキリ　70/130　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002325"
+    },
+    {
+      "name": "蟲神器　アトラスオオカブト　17/55　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002328"
+    },
+    {
+      "name": "蟲神器　オオクワガタ　41/130　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 150,
+      "minPrice": 150,
+      "maxPrice": 150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002330"
+    },
+    {
+      "name": "【蟲神器】青のカード　２枚セット 1枚",
+      "rarity": "C",
+      "currentPrice": 230,
+      "minPrice": 230,
+      "maxPrice": 230,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002333"
+    },
+    {
+      "name": "【蟲神器】術カード・強化カード　４枚セット 1枚",
+      "rarity": "C",
+      "currentPrice": 380,
+      "minPrice": 380,
+      "maxPrice": 380,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002336"
+    },
+    {
+      "name": "【蟲神器】緑のカード　６枚セット 1枚",
+      "rarity": "C",
+      "currentPrice": 470,
+      "minPrice": 470,
+      "maxPrice": 470,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002338"
+    },
+    {
+      "name": "【蟲蟲神器】赤のカード　５枚セット 1枚",
+      "rarity": "C",
+      "currentPrice": 470,
+      "minPrice": 470,
+      "maxPrice": 470,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002343"
+    },
+    {
+      "name": "【蟲蟲神器】ヒジリタマオシコガネ 1枚",
+      "rarity": "C",
+      "currentPrice": 180,
+      "minPrice": 180,
+      "maxPrice": 180,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002346"
+    },
+    {
+      "name": "【蟲神器】螳螂の大鎌　２枚 1枚",
+      "rarity": "C",
+      "currentPrice": 280,
+      "minPrice": 280,
+      "maxPrice": 280,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002351"
+    },
+    {
+      "name": "【蟲神器】ムカシヤンマ　２枚 1枚",
+      "rarity": "C",
+      "currentPrice": 280,
+      "minPrice": 280,
+      "maxPrice": 280,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002354"
+    },
+    {
+      "name": "【蟲神器】キョジンツユムシ　２枚 1枚",
+      "rarity": "C",
+      "currentPrice": 280,
+      "minPrice": 280,
+      "maxPrice": 280,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002356"
+    },
+    {
+      "name": "【最安値】蟲神器　プロモ オオカマキリ  1枚",
+      "rarity": "C",
+      "currentPrice": 500,
+      "minPrice": 500,
+      "maxPrice": 500,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002359"
+    },
+    {
+      "name": "蟲神器　ナナホシテントウ 1枚",
+      "rarity": "C",
+      "currentPrice": 600,
+      "minPrice": 600,
+      "maxPrice": 600,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002361"
+    },
+    {
+      "name": "蟲神器　ナナフシモドキ 1枚",
+      "rarity": "C",
+      "currentPrice": 800,
+      "minPrice": 800,
+      "maxPrice": 800,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002367"
+    },
+    {
+      "name": "蟲神器4弾 94枚 30枚",
+      "rarity": "C",
+      "currentPrice": 890,
+      "minPrice": 890,
+      "maxPrice": 890,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002369"
+    },
+    {
+      "name": "蟲神器2弾SR以下コンプ2枚ずつ 2枚",
+      "rarity": "SR",
+      "currentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002372"
+    },
+    {
+      "name": "蟲神器　カイコ2枚セット 2枚",
+      "rarity": "C",
+      "currentPrice": 5000,
+      "minPrice": 5000,
+      "maxPrice": 5000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002375"
+    },
+    {
+      "name": "蟲神器 SR テイオウゼミ 2枚 2枚",
+      "rarity": "SR",
+      "currentPrice": 1150,
+      "minPrice": 1150,
+      "maxPrice": 1150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002377"
+    },
+    {
+      "name": "蟲神器 SR エメラルドゴキブリバチ 2枚 2枚",
+      "rarity": "SR",
+      "currentPrice": 1150,
+      "minPrice": 1150,
+      "maxPrice": 1150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002380"
+    },
+    {
+      "name": "蟲神器 SR 口寄せの時蛹 2枚 2枚",
+      "rarity": "SR",
+      "currentPrice": 1150,
+      "minPrice": 1150,
+      "maxPrice": 1150,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002382"
+    },
+    {
+      "name": "蟲神器　ミンミンゼミ 2枚 2枚",
+      "rarity": "C",
+      "currentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002385"
+    },
+    {
+      "name": "【引退品】蟲神器1〜3弾優良カードセット 1枚",
+      "rarity": "C",
+      "currentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002387"
+    },
+    {
+      "name": "蟲神器、贋作などの専用出品 1枚",
+      "rarity": "C",
+      "currentPrice": 200,
+      "minPrice": 200,
+      "maxPrice": 200,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002390"
+    },
+    {
+      "name": "蟲神器　蜉蝣の閃き　玉響の蠢き 1枚",
+      "rarity": "C",
+      "currentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002392"
+    },
+    {
+      "name": "蟲神器　空蝉の皮鎧 1枚",
+      "rarity": "C",
+      "currentPrice": 900,
+      "minPrice": 900,
+      "maxPrice": 900,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002397"
+    },
+    {
+      "name": "蟲神器3弾　優良ノーマルセット　水生昆虫 1枚",
+      "rarity": "C",
+      "currentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002400"
+    },
+    {
+      "name": "蟲神器　蜉蝣の閃き　2枚 2枚",
+      "rarity": "C",
+      "currentPrice": 1600,
+      "minPrice": 1600,
+      "maxPrice": 1600,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002405"
+    },
+    {
+      "name": "蟲神器　蜉蝣の閃き 1枚",
+      "rarity": "C",
+      "currentPrice": 500,
+      "minPrice": 500,
+      "maxPrice": 500,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002408"
+    },
+    {
+      "name": "蟲神器　玉響の蠢き、蜉蝣の閃き 1枚",
+      "rarity": "C",
+      "currentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002410"
+    },
+    {
+      "name": "蟲神器3弾、水生昆虫など優良ノーマルセット 1枚",
+      "rarity": "C",
+      "currentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002413"
+    },
+    {
+      "name": "蟲神器3弾SR以下コンプ2枚ずつ 2枚",
+      "rarity": "SR",
+      "currentPrice": 1200,
+      "minPrice": 1200,
+      "maxPrice": 1200,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002416"
+    },
+    {
+      "name": "蟲神器4弾SR以下まとめ売り100枚 30枚",
+      "rarity": "SR",
+      "currentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002419"
+    },
+    {
+      "name": "蟲神器4弾40枚 30枚",
+      "rarity": "C",
+      "currentPrice": 520,
+      "minPrice": 520,
+      "maxPrice": 520,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002421"
+    },
+    {
+      "name": "蟲神器　蜉蝣の閃き　玉響の蠢き　各2枚 2枚",
+      "rarity": "C",
+      "currentPrice": 1900,
+      "minPrice": 1900,
+      "maxPrice": 1900,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002424"
+    },
+    {
+      "name": "蟲神器　ノーマル　バラ売り 1枚",
+      "rarity": "C",
+      "currentPrice": 1500,
+      "minPrice": 1500,
+      "maxPrice": 1500,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002426"
+    },
+    {
+      "name": "蟲神器　アレクサンドリトリバネアゲハ　2枚 2枚",
+      "rarity": "C",
+      "currentPrice": 4500,
+      "minPrice": 4500,
+      "maxPrice": 4500,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002429"
+    },
+    {
+      "name": "蟲神器　瀬戸際の蟲時雨 1枚",
+      "rarity": "C",
+      "currentPrice": 3300,
+      "minPrice": 3300,
+      "maxPrice": 3300,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002431"
+    },
+    {
+      "name": "蟲神器ネプチューンオオカブト 1枚",
+      "rarity": "C",
+      "currentPrice": 3000,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002434"
+    },
+    {
+      "name": "3757【蟲神器】ニセハナマオウカマキリ　LR 1枚",
+      "rarity": "LR",
+      "currentPrice": 1000,
+      "minPrice": 1000,
+      "maxPrice": 1000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002436"
+    },
+    {
+      "name": "蟲神器　オオエンマハンミョウ2枚セット 2枚",
+      "rarity": "C",
+      "currentPrice": 2444,
+      "minPrice": 2444,
+      "maxPrice": 2444,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002441"
+    },
+    {
+      "name": "蟲神器　ニセハナマオウカマキリ2枚セット 2枚",
+      "rarity": "C",
+      "currentPrice": 2444,
+      "minPrice": 2444,
+      "maxPrice": 2444,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002446"
+    },
+    {
+      "name": "蟲神器　タイタンオオウスバカミキリ2枚セット 2枚",
+      "rarity": "C",
+      "currentPrice": 3000,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002449"
+    },
+    {
+      "name": "蟲神器　ネプチューンオオカブト2枚セット 2枚",
+      "rarity": "C",
+      "currentPrice": 3000,
+      "minPrice": 3000,
+      "maxPrice": 3000,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002452"
+    },
+    {
+      "name": "蟲神器　テイオウムカシヤンマ2枚セット 2枚",
+      "rarity": "C",
+      "currentPrice": 3333,
+      "minPrice": 3333,
+      "maxPrice": 3333,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002454"
+    },
+    {
+      "name": "蟲神器　カイコ 1枚",
+      "rarity": "C",
+      "currentPrice": 3300,
+      "minPrice": 3300,
+      "maxPrice": 3300,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002457"
+    },
+    {
+      "name": "蟲神器　蟷螂の構え　2枚 2枚",
+      "rarity": "C",
+      "currentPrice": 700,
+      "minPrice": 700,
+      "maxPrice": 700,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002459"
+    },
+    {
+      "name": "蟲神器　瀬戸際の虫時雨　2枚 2枚",
+      "rarity": "C",
+      "currentPrice": 2400,
+      "minPrice": 2400,
+      "maxPrice": 2400,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002462"
+    },
+    {
+      "name": "蟲神器　テイオウゼミ　19/55　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 180,
+      "minPrice": 180,
+      "maxPrice": 180,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002464"
+    },
+    {
+      "name": "蟲神器　オウゴンオニクワガタ　24/55　SR 1枚",
+      "rarity": "SR",
+      "currentPrice": 180,
+      "minPrice": 180,
+      "maxPrice": 180,
+      "sources": [
+        "magi"
+      ],
+      "updatedAt": "2026-03-17T04:47:20.002466"
+    }
+  ],
+  "updatedAt": "2026-03-17T04:47:20.002467",
+  "totalCards": 77
 }
