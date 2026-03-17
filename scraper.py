@@ -1,9 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import re
 import time
 from datetime import datetime
-import re
 
 def scrape_magi():
     cards = []
@@ -11,70 +11,52 @@ def scrape_magi():
     try:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "ja,en-US;q=0.7,en;q=0.3",
+            "Accept": "text/html,application/xhtml+xml",
+            "Accept-Language": "ja,en-US;q=0.9",
         }
         response = requests.get(url, headers=headers, timeout=15)
-        print(f"ステータスコード: {response.status_code}")
-        print(f"HTML長さ: {len(response.text)}")
-        
+        print(f"ステータス: {response.status_code}")
         soup = BeautifulSoup(response.text, "html.parser")
-        
-        # 全テキストからデータを探す
-        # 価格パターン: ¥ + 数字
-        price_pattern = re.compile(r'¥\s*([\d,]+)')
-        
-        # いろんなセレクターを試す
-        selectors = [
-            "li a", ".item", ".product", "article",
-            "[class*='item']", "[class*='product']", "[class*='card']"
-        ]
-        
-        items = []
-        for selector in selectors:
-            found = soup.select(selector)
-            if found:
-                print(f"セレクター '{selector}' で {len(found)} 件見つかりました")
-                items = found
-                break
-        
-        print(f"合計アイテム数: {len(items)}")
-        
-        for item in items[:50]:
+
+        # aタグの中にカード名と価格がある
+        links = soup.select("a")
+        for link in links:
             try:
-                text = item.get_text(separator=" ", strip=True)
-                price_match = price_pattern.search(text)
+                text = link.get_text(separator="\n", strip=True)
+                lines = [l.strip() for l in text.split("\n") if l.strip()]
                 
-                if price_match:
-                    price_text = price_match.group(1).replace(",", "")
-                    price = int(price_text)
-                    
-                    # カード名を抽出（「蟲神器」を含む行）
-                    lines = [l.strip() for l in text.split() if l.strip()]
-                    name = " ".join(lines[:5]) if lines else text[:50]
-                    
+                # 価格を探す（¥ を含む行）
+                price = None
+                name = None
+                for line in lines:
+                    if "¥" in line:
+                        price_text = line.replace("¥","").replace(",","").replace(" ","").strip()
+                        if price_text.isdigit():
+                            price = int(price_text)
+                    elif len(line) > 5 and "蟲神器" in line or "虫神器" in line:
+                        name = line
+
+                if name and price and price > 0:
                     # レアリティ判定
                     rarity = "C"
-                    if "LR" in text: rarity = "LR"
-                    elif "SR" in text: rarity = "SR"
-                    elif " R " in text: rarity = "R"
-                    elif "UC" in text: rarity = "UC"
-                    
-                    if price > 0 and len(name) > 3:
-                        cards.append({
-                            "name": name[:40],
-                            "price": price,
-                            "rarity": rarity,
-                            "source": "magi"
-                        })
-                        print(f"取得: {name[:30]} → ¥{price}")
-            except Exception as e:
+                    if "LR" in name: rarity = "LR"
+                    elif "SR" in name: rarity = "SR"
+                    elif " R " in name: rarity = "R"
+                    elif "UC" in name: rarity = "UC"
+
+                    cards.append({
+                        "name": name[:40].strip(),
+                        "price": price,
+                        "rarity": rarity,
+                        "source": "magi"
+                    })
+                    print(f"✓ {name[:30]} → ¥{price:,}")
+            except:
                 continue
-        
+
         time.sleep(1)
     except Exception as e:
-        print(f"magiエラー: {e}")
-    
+        print(f"エラー: {e}")
     return cards
 
 def main():
