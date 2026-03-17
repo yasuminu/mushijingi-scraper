@@ -1,71 +1,79 @@
 import requests
+from bs4 import BeautifulSoup
 import json
 import time
 from datetime import datetime
+import re
 
 def scrape_magi():
     cards = []
-    url = "https://magi.camp/api/v1/search?q=蟲神器&category=card"
+    url = "https://magi.camp/brands/179/items"
     try:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
-            "Accept": "application/json"
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "ja,en-US;q=0.7,en;q=0.3",
         }
         response = requests.get(url, headers=headers, timeout=15)
-        data = response.json()
-        items = data.get("items", data.get("products", data.get("results", [])))
-        for item in items[:30]:
+        print(f"ステータスコード: {response.status_code}")
+        print(f"HTML長さ: {len(response.text)}")
+        
+        soup = BeautifulSoup(response.text, "html.parser")
+        
+        # 全テキストからデータを探す
+        # 価格パターン: ¥ + 数字
+        price_pattern = re.compile(r'¥\s*([\d,]+)')
+        
+        # いろんなセレクターを試す
+        selectors = [
+            "li a", ".item", ".product", "article",
+            "[class*='item']", "[class*='product']", "[class*='card']"
+        ]
+        
+        items = []
+        for selector in selectors:
+            found = soup.select(selector)
+            if found:
+                print(f"セレクター '{selector}' で {len(found)} 件見つかりました")
+                items = found
+                break
+        
+        print(f"合計アイテム数: {len(items)}")
+        
+        for item in items[:50]:
             try:
-                name = item.get("name") or item.get("title", "")
-                price = item.get("price") or item.get("sell_price", 0)
-                if name and price:
-                    rarity = "SR"
-                    if "LR" in name: rarity = "LR"
-                    elif "SR" in name: rarity = "SR"
-                    elif " R " in name or name.endswith(" R"): rarity = "R"
-                    elif "UC" in name: rarity = "UC"
-                    elif " C " in name or name.endswith(" C"): rarity = "C"
-                    cards.append({
-                        "name": name.strip(),
-                        "price": int(price),
-                        "rarity": rarity,
-                        "source": "magi"
-                    })
-            except:
+                text = item.get_text(separator=" ", strip=True)
+                price_match = price_pattern.search(text)
+                
+                if price_match:
+                    price_text = price_match.group(1).replace(",", "")
+                    price = int(price_text)
+                    
+                    # カード名を抽出（「蟲神器」を含む行）
+                    lines = [l.strip() for l in text.split() if l.strip()]
+                    name = " ".join(lines[:5]) if lines else text[:50]
+                    
+                    # レアリティ判定
+                    rarity = "C"
+                    if "LR" in text: rarity = "LR"
+                    elif "SR" in text: rarity = "SR"
+                    elif " R " in text: rarity = "R"
+                    elif "UC" in text: rarity = "UC"
+                    
+                    if price > 0 and len(name) > 3:
+                        cards.append({
+                            "name": name[:40],
+                            "price": price,
+                            "rarity": rarity,
+                            "source": "magi"
+                        })
+                        print(f"取得: {name[:30]} → ¥{price}")
+            except Exception as e:
                 continue
+        
         time.sleep(1)
     except Exception as e:
         print(f"magiエラー: {e}")
-    
-    # APIが取れない場合はHTMLから取得
-    if not cards:
-        try:
-            from bs4 import BeautifulSoup
-            url2 = "https://magi.camp/brands/179/items"
-            response2 = requests.get(url2, headers=headers, timeout=15)
-            soup = BeautifulSoup(response2.text, "html.parser")
-            items2 = soup.select(".item-box") or soup.select(".product-item") or soup.select("article")
-            for item in items2[:30]:
-                try:
-                    name_el = item.select_one(".item-name") or item.select_one("h3") or item.select_one("p")
-                    price_el = item.select_one(".price") or item.select_one("span")
-                    if name_el and price_el:
-                        price_text = price_el.text.replace("¥","").replace(",","").strip()
-                        if price_text.isdigit():
-                            name = name_el.text.strip()
-                            rarity = "SR"
-                            if "LR" in name: rarity = "LR"
-                            elif "SR" in name: rarity = "SR"
-                            cards.append({
-                                "name": name,
-                                "price": int(price_text),
-                                "rarity": rarity,
-                                "source": "magi"
-                            })
-                except:
-                    continue
-        except Exception as e:
-            print(f"magi HTMLエラー: {e}")
     
     return cards
 
